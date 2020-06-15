@@ -247,3 +247,15 @@ def player_with_longest_name
   }
   max_name
 end
+
+def most_steals 
+  max_steals = 0
+  game_hash.each{|x,y|
+    y[:players].each{|x,y|
+      if x[:steals] > max_steals
+        max_steals = x[:steals]
+      end
+    }
+  }
+  max_steals
+end
