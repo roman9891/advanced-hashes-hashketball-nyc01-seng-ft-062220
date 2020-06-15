@@ -1,4 +1,3 @@
-# Write your code below game_hash
 def game_hash
   {
     home: {
@@ -208,4 +207,16 @@ def find_max_shoe
     }
   }
   max_shoe
+end
+
+def most_points_scored
+  max_points = 0
+  game_hash.each{|x,y|
+    y[:players].each{|x,y|
+      if x[:points] > max_points
+        max_points = x[:points]
+      end
+    }
+  }
+  max_points
 end
