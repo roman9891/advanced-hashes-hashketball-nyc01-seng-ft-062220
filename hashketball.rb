@@ -175,7 +175,7 @@ def player_numbers(team)
       numbers << x[:number]
   }
   #numbers
-  long_name_steals_a_ton
+  long_name_steals_a_ton?
 end 
 
 def player_stats(player)
