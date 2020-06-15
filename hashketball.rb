@@ -175,7 +175,7 @@ def player_numbers(team)
       numbers << x[:number]
   }
   #numbers
-  max_steals
+  most_steals
 end 
 
 def player_stats(player)
