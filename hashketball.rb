@@ -261,5 +261,13 @@ def most_steals
 end
 
 def long_name_steals_a_ton?
-  
+  game_hash.each{|x,y|
+    y[:players].each{|x,y|
+      if x[:player_name] == player_with_longest_name
+        if x[:steals] == most_steals
+          return true  
+        end
+      end
+    }
+  }
 end
