@@ -259,3 +259,7 @@ def most_steals
   }
   max_steals
 end
+
+def long_name_steals_a_ton?
+  
+end
