@@ -174,7 +174,8 @@ def player_numbers(team)
   game_hash[:away][:players].each {|x,y|
       numbers << x[:number]
   }
-  numbers
+  #numbers
+  player_with_longest_name
 end 
 
 def player_stats(player)
@@ -219,4 +220,30 @@ def most_points_scored
     }
   }
   max_points
+end
+
+def winning_team 
+  home_points = 0 
+  away_points = 0 
+  game_hash[:home][:players].each{|x,y|
+    home_points += x[:points]
+  }
+  game_hash[:away][:players].each{|x,y|
+    away_points += x[:points]
+  }
+  home_points > away_points ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
+end
+
+def player_with_longest_name
+  max_name_length = 0
+  max_name = ""
+  game_hash.each{|x,y|
+    y[:players].each{|x,y|
+      if x[:player_name].length > max_name_length
+        max_name = x[:player_name]
+        max_name_length = x[:player_name].length
+      end
+    }
+  }
+  max_name
 end
