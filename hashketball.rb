@@ -174,8 +174,7 @@ def player_numbers(team)
   game_hash[:away][:players].each {|x,y|
       numbers << x[:number]
   }
-  #numbers
-  long_name_steals_a_ton?
+  numbers
 end 
 
 def player_stats(player)
